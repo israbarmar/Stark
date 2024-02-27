@@ -11,7 +11,11 @@ const search = d.getElementById('i_search');
 const icon_search = d.querySelector('.fa-magnifying-glass');
 const input_search = d.querySelector('.input_search');
 const nav_sections = d.querySelectorAll('.nav_section a');
+const b_purple = d.querySelector('.b-purple');
+const b = d.body;
+const m = d.main;
 
+/*Change link color in 'nav_section'*/
 nav_sections.forEach((section)=>{
 
     section.classList.add('first_color');
@@ -24,6 +28,8 @@ nav_sections.forEach((section)=>{
  })
 })
 
+/*Change search border color*/
+
 search.addEventListener('click', ()=>{icon_search.classList.add('icon_color')})
 
 d.addEventListener('click', (e) => {
@@ -32,30 +38,29 @@ d.addEventListener('click', (e) => {
     }
 });
 
-cards.forEach((card)=>{
+/*Create effecto to cards in 'Features'*/
 
+cards.forEach((card)=>{
 
 card.addEventListener('mousemove', (e) => { 
 
   const boundingRect = card.getBoundingClientRect(); 
 
+  const x = e.clientX - boundingRect.left;
+  const y = e.clientY - boundingRect.top;  
 
-  const x = e.clientX - boundingRect.left; 
-  const y = e.clientY - boundingRect.top;   
   const centerX = boundingRect.width / 2; 
-
   const centerY = boundingRect.height / 2; 
-  const deltaX = (x - centerX) / centerX;  
-  
+
+  const deltaX = (x - centerX) / centerX;
   const deltaY = (centerY - y) / centerY;
-  
+
   const rotateVertical = deltaX * -10;
+  const rotateHorizontal = deltaY * -10;
 
-  const rotateHorizontal = deltaY * -10; 
+  const scale = 1.03; 
+  card.style.transform = `perspective(800px) rotateX(${rotateHorizontal}deg) rotateY(${rotateVertical}deg) scale(${scale})`;
 
-  const scale = 1.03;
-    card.style.transform = `perspective(800px) rotateX(${rotateHorizontal}deg) rotateY(${rotateVertical}deg) scale(${scale})`;
-  
 });
 })
 
@@ -64,6 +69,8 @@ cards.forEach((card)=>{
     card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
     });
 })
+
+/*Create a glow effect to 'cards'*/
 
 cards.forEach((card) => {
     const resplandor = card.querySelector('.resplandor');
@@ -77,6 +84,8 @@ cards.forEach((card) => {
         resplandor.style.top = `${y}px`;
     });
 });
+
+/*Menu options appears in 'Product' and 'Resources' and menus belongs to them*/
 
 product_button.forEach((b_menu, index)=>{
 
@@ -104,8 +113,7 @@ product_menu.forEach((p_menu, index)=>{
     })
 })
 
-const b = d.body;
-const m = d.main;
+/*Hamburger button*/
 
 hamburger.addEventListener('click', ()=>{
 hamburger.classList.toggle('is-active'), 
@@ -113,5 +121,17 @@ menu.classList.toggle('show_menu'),
 b.classList.toggle('dissapear')
 });
 
+/*Other options appears when click on 'Categories'*/
+
 b_categories.addEventListener('click', ()=>a_categories.classList.toggle('noeffect'));
+
+/*Change color to arrow in 'nav_section'*/
+
+d.addEventListener('click', (e) => {
+    if (!b_categories.contains(e.target)) {
+        b_purple.classList.remove('purple');
+    } else {
+        b_purple.classList.add('purple');
+    }
+});
 

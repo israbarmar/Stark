@@ -50,8 +50,7 @@ header{
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
-    width: 60em; /*Si se desea de que el ancho se mantenga cuando se aleja con el zoom
-                    entonces hay que darle un ancho con tamaño fijo*/
+    width: 60em; 
 }
 
 .div_first_relative{
@@ -151,7 +150,7 @@ header button{
 }
 
 .categories{
-    width: 100%;
+    width: 90%;
 }
 
 .categories .fa-solid{
@@ -186,6 +185,10 @@ header button:not(.hamburger):hover{
     font-weight:900;
     color: #000000;
     column-gap: 1.5em;
+}
+
+.a_menu div:hover{
+    cursor: pointer;
 }
 
 .a_menu h3{
@@ -294,8 +297,12 @@ a:link:not(.view_all), a:visited, a:active {
     grid-template-columns: 320px auto;
 }
 
+.purple{
+   color: var(--main-color) !important;
+}
+
 .noeffect{
-    display: none !important;;
+    display: none !important;
 }
 
 .nav_card{
@@ -335,12 +342,12 @@ input[type="search"]{
     width: 85%;
     border: 2px rgb(197, 197, 197) solid;
     border-radius: 3px;
-    outline: none; /*Con outline se quita el borde negro cuando se da click encima*/
+    outline: none; 
     transition: border 0.5s;
     padding-left: 2.5em;
 }
 
-#i_search:focus{ /*Se le puede cambiar de color cuando se enfoca sin javascript*/
+#i_search:focus{ 
     border: 2px solid var(--main-color);
 }
 
@@ -418,8 +425,8 @@ h1{
 .a_link{
     grid-area: a_div;
     display: flex;
-    justify-content: end; /*Final de manera horizontal*/
-    align-items:center;  /*Centrado de manera vertical*/
+    justify-content: end; 
+    align-items:center; 
     height: 50%;
     margin-top: 1em;
 }
@@ -436,7 +443,7 @@ h1{
     border: 0.5px solid rgb(214, 211, 211);
     padding: 1.5em;
     display: flex;
-    flex-direction: column; /* Cambiado a un diseño vertical */
+    flex-direction: column; 
     cursor: pointer;
 }
 
@@ -448,8 +455,7 @@ h1{
 
 .content_div h2 {
     padding-right: 0.9em;
-    display: -webkit-box; /*Con estas tres lineas se aseguroa de que aparezan puntos suspensivos
-                            de manera vertical a partir de la 3ra linea*/
+    display: -webkit-box; 
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
     overflow: hidden;
@@ -480,7 +486,7 @@ h1{
     background-position: center;
     background-size: cover;
     cursor: pointer;
-    transform-style: preserve-3d; /* Preserva la perspectiva 3D */
+    transform-style: preserve-3d; 
     transition: transform 0.3s ease-out;
     border: 1px solid white;
 }
@@ -490,7 +496,7 @@ h1{
     background-position: center;
     background-size: cover;
     cursor: pointer;
-    transform-style: preserve-3d; /* Preserva la perspectiva 3D */
+    transform-style: preserve-3d; 
     transition: transform 0.3s ease-out;
     border: 1px solid white;
 }
@@ -540,10 +546,10 @@ h1{
 
 .resplandor {
     position: absolute;
-    width: 100%; /* Ajusta el tamaño del resplandor según tus preferencias */
-    height: 50%; /* Ajusta el tamaño del resplandor según tus preferencias */
+    width: 100%;
+    height: 50%;
     background: radial-gradient(rgba(221, 221, 221, 0.2) 0%, rgba(235, 227, 227, 0) 100%);
-    border-radius: 50%; /* Ajusta según tus preferencias */
+    border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -567,12 +573,7 @@ footer{
 
 .footer_section{
     display: grid;
-    grid-template-columns: repeat(4,minmax(0, 1fr)); /*Especifica que el contenido 
-    contend´ra un tamanño que va desde 0 a 1fr. 1fr es el espacio que
-    se distribuye dentro de la sección y 0 es lo mínimo que puede reducirse sin colapsar */
-
-    /*Con 'auto', el máximo que alcanza cada celda se da de acuerdo a su contenido,
-    no ocupa más espacio que ese.*/
+    grid-template-columns: repeat(4,minmax(0, 1fr)); 
     row-gap: 3em;
     color: white;
     margin-bottom: 5em;
@@ -746,6 +747,10 @@ footer li{
         background-color: #FAFAFA;
     }
 
+    .categories{
+        width: 100%;
+    }
+
 }
 
 @media(max-width:761px){
@@ -797,8 +802,7 @@ footer li{
     }
 }
 
-@media(max-width:280px){ /*Cambia con estas medidas
-    */
+@media(max-width:280px){ 
     body{
         width: 20em;
     }
