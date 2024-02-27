@@ -84,7 +84,7 @@ cards.forEach((card) => {
         resplandor.style.top = `${y}px`;
     });
 });
- 
+  
 /*Menu options appears in 'Product' and 'Resources' and menus belongs to them*/
 
 product_button.forEach((b_menu, index)=>{
