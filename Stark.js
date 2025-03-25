@@ -38,7 +38,7 @@ d.addEventListener('click', (e) => {
     }
 });
 
-/*Create effecto to cards in 'Features'*/
+/*Create effect to cards in 'Features'*/
 
 cards.forEach((card)=>{
 
@@ -73,15 +73,15 @@ cards.forEach((card)=>{
 /*Create a glow effect to 'cards'*/
 
 cards.forEach((card) => {
-    const resplandor = card.querySelector('.resplandor');
+    const radiance = card.querySelector('.radiance');
 
     card.addEventListener('mousemove', (e) => {
         const boundingRect = card.getBoundingClientRect();
         const x = e.clientX - boundingRect.left;
         const y = e.clientY - boundingRect.top;
 
-        resplandor.style.left = `${x}px`;
-        resplandor.style.top = `${y}px`;
+        radiance.style.left = `${x}px`;
+        radiance.style.top = `${y}px`;
     });
 });
     
